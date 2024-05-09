@@ -10,6 +10,9 @@ const DetailScreen = () => {
     const navigateToHome = () => {
         navigation.navigate('Home');
     };
+    const navigateObjets = () => {
+        navigation.navigate('RegisterObjets');
+      };
 
     const handleCheck = (itemName) => {
         setIsChecked({ ...isChecked, [itemName]: !isChecked[itemName] });
@@ -17,7 +20,7 @@ const DetailScreen = () => {
     return (
 <View style={styles.container}>
             <View style={styles.titulo}>
-                <Text style={styles.tituloText}>Detalle</Text>
+                <Text style={styles.tituloText}>Objetos</Text>
             </View>
             <View style={styles.search}>
                 <Text style={styles.searchLabel}>Buscar:</Text>
@@ -65,6 +68,13 @@ const DetailScreen = () => {
                     </View>
                 </TouchableOpacity>
             </ScrollView>
+
+            <View style={styles.containerButton}>
+                <TouchableOpacity onPress={navigateObjets} style={[styles.button, { backgroundColor: 'rgb(191, 227, 173)' }]}>
+                    <FontAwesomeIcon name="plus-circle" size={45} style={styles.agre} />
+                    <Text style={styles.buttonText}>AGREGAR</Text>
+                </TouchableOpacity>
+            </View>
 
             <View style={styles.flechaContainer}>
                 <TouchableOpacity onPress={navigateToHome} style={styles.flechaLeft}>
@@ -159,6 +169,28 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: 'black',
         marginRight: 10,
+    },
+    containerButton: {
+        flexDirection: 'row',
+    },
+    agre: {
+        color: "#39A900",
+
+    },
+    buttonText: {
+        fontSize: 15,
+        color: '#000',
+    },
+    button: {
+        width: 130,
+        height: 50,
+        gap: 5,
+        justifyContent: 'center',
+        borderRadius: 100,
+        margin: 10,
+        marginBottom: 100,
+        flexDirection: 'row',
+        alignItems: 'center'
     },
     flechaContainer: {
       position: 'absolute',

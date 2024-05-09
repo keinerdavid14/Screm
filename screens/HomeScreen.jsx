@@ -30,7 +30,7 @@ const HomeScreen = () => {
     navigation.navigate('EditarObjets');
   };
   const navigateDai = () => {
-    navigation.navigate('DetailScreen');
+    navigation.navigate('Details');
   };
   const navigateInve = () => {
     navigation.navigate('RegisterInventario');
@@ -71,28 +71,18 @@ const HomeScreen = () => {
         <View style={styles.barraOpcion}>
           <TouchableOpacity onPress={navigateObjets} style={styles.opcion}>
             <FontAwesomeIcon name="plus" size={40} />
-            <Text>Agregar</Text>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={navigateEditar} style={styles.opcion}>
-            <FontAwesomeIcon name="edit" size={40} />
-            <Text>Editar</Text>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={navigateDai} style={styles.opcion}>
-            <FontAwesomeIcon name="info-circle" size={40} />
-            <Text>Detalles</Text>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={navigateInve} style={styles.opcion}>
-            <FontAwesomeIcon name="list-alt" size={40} />
-            <Text>Inventario</Text>
+            <Text>Agregar Objeto</Text>
           </TouchableOpacity>
           <TouchableOpacity onPress={navigateReport} style={styles.opcion}>
             <FontAwesomeIcon name="file-text" size={40} />
-            <Text>Reporte</Text>
+            <Text>Inventarios</Text>
           </TouchableOpacity>
-          <TouchableOpacity onPress={navigateDele} style={styles.opcion}>
-            <FontAwesomeIcon name="trash" size={40} />
-            <Text>Eliminar</Text>
+          
+          <TouchableOpacity onPress={navigateInve} style={styles.opcion}>
+            <FontAwesomeIcon name="list-alt" size={40} />
+            <Text>Agregar Inventario</Text>
           </TouchableOpacity>
+
           <TouchableOpacity style={styles.opcion} onPress={btnBars}>
             <FontAwesomeIcon name="arrow-left" size={35} />
           </TouchableOpacity>

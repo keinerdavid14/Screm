@@ -16,8 +16,12 @@ const InventarioScreen = () => {
 
     };
     const navigateToHome = () => {
-        navigation.navigate('home');
+        navigation.navigate('Home');
 
+    };
+
+    const navigateDai = () => {
+        navigation.navigate('Details');
     };
     return (
         <View style={styles.container}>
@@ -37,10 +41,10 @@ const InventarioScreen = () => {
                     <FontAwesomeIcon name="laptop" size={30} style={styles.itemImage} />
                     <Text style={styles.listInv}>Inventario ADSO</Text>
                     <View style={styles.option}>
-                        <TouchableOpacity>
-                            <FontAwesomeIcon name="download" size={20} style={styles.optionIcon} />
+                        <TouchableOpacity onPress={navigateDai}>
+                            <FontAwesomeIcon name="eye" size={20} style={styles.optionIcon} />
                         </TouchableOpacity>
-                        <TouchableOpacity  onPress={navigateEditar}>
+                        <TouchableOpacity onPress={navigateEditar}>
                             <FontAwesomeIcon name="pencil" size={20} style={styles.optionIcon} />
                         </TouchableOpacity>
                     </View>
@@ -49,8 +53,8 @@ const InventarioScreen = () => {
                     <FontAwesomeIcon name="paint-brush" size={30} style={styles.itemImage} />
                     <Text style={styles.listInv}>Inventario Artes grafiacas</Text>
                     <View style={styles.option}>
-                        <TouchableOpacity>
-                            <FontAwesomeIcon name="download" size={20} style={styles.optionIcon} />
+                        <TouchableOpacity onPress={navigateDai}>
+                            <FontAwesomeIcon name="eye" size={20} style={styles.optionIcon} />
                         </TouchableOpacity>
                         <TouchableOpacity onPress={navigateEditar}>
                             <FontAwesomeIcon name="pencil" size={20} style={styles.optionIcon} />
@@ -61,8 +65,8 @@ const InventarioScreen = () => {
                     <FontAwesomeIcon name="shopping-bag" size={30} style={styles.itemImage} />
                     <Text style={styles.listInv}>Inventario confecciones</Text>
                     <View style={styles.option}>
-                        <TouchableOpacity>
-                            <FontAwesomeIcon name="download" size={20} style={styles.optionIcon} />
+                        <TouchableOpacity onPress={navigateDai}>
+                            <FontAwesomeIcon name="eye" size={20} style={styles.optionIcon} />
                         </TouchableOpacity>
                         <TouchableOpacity onPress={navigateEditar}>
                             <FontAwesomeIcon name="pencil" size={20} style={styles.optionIcon} />
@@ -73,8 +77,8 @@ const InventarioScreen = () => {
                     <FontAwesomeIcon name="truck" size={30} style={styles.itemImage} />
                     <Text style={styles.listInv}>Inventario Automotriz</Text>
                     <View style={styles.option}>
-                        <TouchableOpacity>
-                            <FontAwesomeIcon name="download" size={20} style={styles.optionIcon} />
+                        <TouchableOpacity onPress={navigateDai}>
+                            <FontAwesomeIcon name="eye" size={20} style={styles.optionIcon} />
                         </TouchableOpacity>
                         <TouchableOpacity onPress={navigateEditar}>
                             <FontAwesomeIcon name="pencil" size={20} style={styles.optionIcon} />
