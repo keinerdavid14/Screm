@@ -22,6 +22,13 @@ import DetailScreen from './screens/DetailScreen';
 import VerToken from './components/ComponentToken';
 import OtraPantalla from './screens/OtraPantalla';
 import RegisterInventario from './screens/RegisterInventario';
+import AmbienteScrenn from './screens/AmbienteScrenn';
+import CategoriaScrenn from './screens/CategoriaScrenn';
+import EditAmbien from './screens/EditAmbien';
+import EditCategory from './screens/EditCategory';
+import RegisterAmbie from './screens/RegisterAmbie';
+import RegisterCatego from './screens/RegisterCatego';
+
 
 
 const Stack = createStackNavigator();
@@ -49,6 +56,13 @@ const Navigation = () => {
           <Stack.Screen name="DeleScreen" component={DeleScreen} />
           <Stack.Screen name="ReportScreen" component={ReportScreen} />
           <Stack.Screen name="RecupContrScreen" component={RecupContrScreen} />
+          <Stack.Screen name="AmbienteScrenn" component={AmbienteScrenn} />
+          <Stack.Screen name="CategoriaScrenn" component={CategoriaScrenn} />
+          <Stack.Screen name="EditAmbien" component={EditAmbien} />
+          <Stack.Screen name="EditCategory" component={EditCategory} />
+          <Stack.Screen name="RegisterAmbie" component={RegisterAmbie} />
+          <Stack.Screen name="RegisterCatego" component={RegisterCatego} />
+
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaView>

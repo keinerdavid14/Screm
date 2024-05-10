@@ -1,27 +1,32 @@
-import React from 'react';
-import { View, Text, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
+import React, { useState } from 'react';
+import { View, Text, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
 import { Input } from 'react-native-elements';
 import { useNavigation } from '@react-navigation/native';
 import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
 
-const EditarObjets = () => {
+
+
+const RegisterCatego = () => {
+
     const navigation = useNavigation();
 
     const navigateToHome = () => {
         navigation.navigate('Home');
     };
 
+
+
     return (
         <View style={styles.container}>
             <View style={styles.titulo}>
-                <Text style={styles.tituloText}>Editar objetos</Text>
+                <Text style={styles.tituloText}>Agregar Categoria</Text>
             </View>
-            <View style={styles.containerEdit}>
-                <FontAwesomeIcon name="pencil" size={60} style={styles.edit} />
+            <View style={styles.containerRegit}>
+                <FontAwesomeIcon name="plus-circle" size={60} style={styles.regist} />
             </View>
             <ScrollView style={styles.scrollContainer} showsVerticalScrollIndicator={false}>
                 <View style={styles.containerForm}>
-                    {['Serial', 'Consecutivo', 'Descripcion', 'Comentario', 'Codigo centro', 'Centro', 'Codigo ambiente', 'Ambiente','Id objeto','Modelo','Nombre instructor','Estado del articulo','Articulo' ].map((label) => (
+                    {['ID Categoria', 'Nombre Del Categoria'].map((label) => (
                         <View style={styles.containerInput} key={label}>
                             <Text style={styles.textInputLabel}>{label}:</Text>
                             <Input containerStyle={styles.inputContainer} inputStyle={styles.input} />
@@ -33,7 +38,6 @@ const EditarObjets = () => {
                 <FontAwesomeIcon name="qrcode" size={40} />
                 <Text style={styles.buttonText}>Crear</Text>
             </TouchableOpacity>
-
         </View>
     );
 };
@@ -53,55 +57,72 @@ const styles = StyleSheet.create({
         fontSize: 24,
         color: 'white',
     },
-    containerEdit: {
+    containerRegit: {
         width: '89%',
         borderBottomWidth: 1,
         alignItems: 'flex-end',
     },
-    edit: {
+    regist: {
         margin: '1%'
     },
     scrollContainer: {
-        width: '100%',
-        height: 400,
         marginTop: '10%',
+        width: '90%',
+        height: 400,
+        alignSelf: 'center',
     },
     containerForm: {
-        margin: '5%',
-        width: '90%',
+        width: '100%',
+        marginLeft: '5%',
     },
     containerInput: {
         flexDirection: 'row',
         marginBottom: 20,
+        marginRight: 10,
         alignItems: 'center',
     },
     textInputLabel: {
-        fontSize: 15,
+        fontSize: 16,
         marginRight: 10,
         flex: 1,
     },
     inputContainer: {
-        flex: 2,  
+        flex: 2,
     },
     input: {
-        width: '100%', 
+        width: '100%',
+    },
+    inputDate: {
+        flex: 2,
+        flexDirection: 'row',
+        padding: 10,
+        borderBottomWidth: 1,
+        borderColor: 'rgb(133, 133, 133)',
+        alignItems: 'center',
+    },
+    calendarIcon: {
+        marginLeft: 5,
+    },
+    dateText: {
+        fontSize: 16,
     },
     button: {
+        position: 'absolute',
+        flexDirection: 'row',
+        bottom: '-20%',
         width: 160,
         height: 50,
         backgroundColor: '#39A900',
-        flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center',
         borderRadius: 10,
-        marginVertical: 100,
+        alignSelf: 'center',
     },
     buttonText: {
         fontSize: 18,
         color: 'white',
         marginHorizontal: 10,
     },
-
 });
 
-export default EditarObjets;
+export default RegisterCatego;

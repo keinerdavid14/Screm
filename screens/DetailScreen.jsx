@@ -76,11 +76,7 @@ const DetailScreen = () => {
                 </TouchableOpacity>
             </View>
 
-            <View style={styles.flechaContainer}>
-                <TouchableOpacity onPress={navigateToHome} style={styles.flechaLeft}>
-                    <FontAwesomeIcon name="arrow-left" size={40} style={styles.flechaIcon}  />
-                </TouchableOpacity>
-            </View>
+
 
         </View>
     );
@@ -192,16 +188,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center'
     },
-    flechaContainer: {
-      position: 'absolute',
-      bottom: 0, 
-      right: 0, 
-      marginBottom: 40,
-      marginRight: 20, 
-    },
-    flechaIcon: {
-      color: 'black',
-    },
+
 });
 
 export default DetailScreen;

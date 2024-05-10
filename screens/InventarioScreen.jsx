@@ -94,9 +94,7 @@ const InventarioScreen = () => {
                 </TouchableOpacity>
             </View>
 
-            <TouchableOpacity onPress={navigateToHome} style={styles.flechaContainer}>
-                <FontAwesomeIcon name="arrow-left" size={40} style={styles.flechaIcon} />
-            </TouchableOpacity>
+
 
         </View>
     );
@@ -104,9 +102,7 @@ const InventarioScreen = () => {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
         alignItems: 'center',
-        backgroundColor: '#eeeeee',
     },
     titulo: {
         width: '100%',
@@ -143,7 +139,6 @@ const styles = StyleSheet.create({
         color: 'black',
     },
     inventary: {
-        flex: 1,
         width: '100%',
     },
     item: {
@@ -185,6 +180,7 @@ const styles = StyleSheet.create({
         width: 130,
         height: 50,
         gap: 5,
+        bottom: '-60%',
         justifyContent: 'center',
         borderRadius: 100,
         margin: 10,
@@ -196,16 +192,7 @@ const styles = StyleSheet.create({
         fontSize: 15,
         color: '#000',
     },
-    flechaContainer: {
-        position: 'absolute',
-        bottom: 0,
-        right: 0,
-        marginBottom: 40,
-        marginRight: 20,
-    },
-    flechaIcon: {
-        color: 'black',
-    },
+
 });
 
 export default InventarioScreen;

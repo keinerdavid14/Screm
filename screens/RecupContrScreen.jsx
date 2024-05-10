@@ -29,11 +29,7 @@ const RecupContrScreen = () => {
                     <Text style={styles.buttonText}>Enviar</Text>
                 </TouchableOpacity>
 
-                <View style={styles.flechaContainer}>
-                    <TouchableOpacity onPress={navigateTologin}>
-                        <FontAwesomeIcon name="arrow-left" size={40} style={styles.flechaIcon} />
-                    </TouchableOpacity>
-                </View>
+
 
         </View>
     );
@@ -106,18 +102,7 @@ const styles = StyleSheet.create({
         color: 'white',
     },
 
-    flechaContainer: {
-        position: 'absolute',
-        bottom: 0, 
-        right: 0, 
-        marginBottom: 40,
-        marginRight: 20, 
-    },
-     
-    flechaIcon: {
-        width: 40,
-        height: 40,
-     },
+
 
 });
 

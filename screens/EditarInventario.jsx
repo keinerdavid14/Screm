@@ -63,11 +63,7 @@ const EditarInventario = () => {
             <TouchableOpacity onPress={navigateToHome} style={styles.button}>
                 <Text style={styles.buttonText}>Editar</Text>
             </TouchableOpacity>
-            <View style={styles.flechaContainer}>
-                <TouchableOpacity onPress={navigateToHome} style={styles.flechaLeft}>
-                    <FontAwesomeIcon name="arrow-left" size={40} style={styles.flechaIcon} />
-                </TouchableOpacity>
-            </View>
+
         </View>
     );
 };
@@ -143,15 +139,7 @@ const styles = StyleSheet.create({
         color: 'white',
         marginHorizontal: 10,
     },
-    flechaContainer: {
-        position: 'absolute',
-        bottom: '5%',
-        right: 0,
-        marginRight: 20,
-    },
-    flechaIcon: {
-        color: 'black',
-    },
+
 });
 
 export default EditarInventario;
