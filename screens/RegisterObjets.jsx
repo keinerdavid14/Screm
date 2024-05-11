@@ -4,11 +4,12 @@ import { Input } from 'react-native-elements';
 import { useNavigation } from '@react-navigation/native';
 import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
 import DateTimePicker from '@react-native-community/datetimepicker';
-
+import {Picker, Item} from '@react-native-picker/picker'; // Importa Picker desde '@react-native-picker/picker'
 
 const RegisterObjets = () => {
     const [date, setDate] = useState(new Date());
     const [show, setShow] = useState(false);
+    const [selectedValue, setSelectedValue] = useState('option1'); // Define el estado para el valor seleccionado
     const navigation = useNavigation();
 
     const navigateToHome = () => {
@@ -35,12 +36,40 @@ const RegisterObjets = () => {
             </View>
             <ScrollView style={styles.scrollContainer} showsVerticalScrollIndicator={false}>
                 <View style={styles.containerForm}>
-                    {['Codigo', 'Descripcion', 'Codigo centro', 'Centro', 'Ambiente', 'Codigo ambiente'].map((label) => (
+                    {['Codigo', 'Descripcion', 'Codigo centro', 'Centro'].map((label) => (
                         <View style={styles.containerInput} key={label}>
                             <Text style={styles.textInputLabel}>{label}:</Text>
                             <Input containerStyle={styles.inputContainer} inputStyle={styles.input} />
                         </View>
                     ))}
+                    <View style={styles.select} >
+                        <Text style={styles.textInputLabel} >Codigo Ambiente</Text>
+                        <Picker style={styles.select1}
+                            selectedValue={selectedValue}
+                            onValueChange={(itemValue, itemIndex) =>
+                                setSelectedValue(itemValue)
+                            }>
+                                
+                            <Picker.Item label="Seleccione el ambiente"/>
+                            <Picker.Item label="1" value="1" />
+                            <Picker.Item label="2" value="2" />
+                            <Picker.Item label="3" value="3" />
+                        </Picker>
+                    </View>
+                    <View style={styles.select} >
+                        <Text style={styles.textInputLabel} >Ambiente</Text>
+                        <Picker style={styles.select1}
+                            selectedValue={selectedValue}
+                            onValueChange={(itemValue, itemIndex) =>
+                                setSelectedValue(itemValue)
+                            }>
+                                
+                            <Picker.Item label="Seleccione el ambiente"/>
+                            <Picker.Item label="ADSO" value="1" />
+                            <Picker.Item label="CONFECCIONES" value="2" />
+                            <Picker.Item label="ARTES GRAFICAS" value="3" />
+                        </Picker>
+                    </View>
                     <View style={styles.containerInput}>
                         <Text style={styles.textInputLabel}>Fecha:</Text>
                         <TouchableOpacity onPress={showDatepicker} style={styles.inputDate}>
@@ -147,6 +176,20 @@ const styles = StyleSheet.create({
         color: 'white',
         marginHorizontal: 10,
     },
+    select:{
+        gap:80,
+        alignItems: 'center',
+        flexDirection: 'row',
+        
+    },
+    select1:{
+        
+        width: "50%",
+        
+
+        
+        
+    },
 });
 
-export default RegisterObjets;
+export default RegisterObjets;
