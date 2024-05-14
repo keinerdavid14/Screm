@@ -28,7 +28,7 @@ import EditAmbien from './screens/EditAmbien';
 import EditCategory from './screens/EditCategory';
 import RegisterAmbie from './screens/RegisterAmbie';
 import RegisterCatego from './screens/RegisterCatego';
-
+import RegisterScreen from './screens/RegisterScreen';
 
 
 const Stack = createStackNavigator();
@@ -37,7 +37,7 @@ const Navigation = () => {
   return (
     <SafeAreaView style={{ flex: 1, paddingTop: StatusBar.currentHeight }}>
       <NavigationContainer>
-        <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="Home">
+        <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="Register">
           <Stack.Screen name="otra" component={OtraPantalla} />
           <Stack.Screen name="Token" component={VerToken} />
           <Stack.Screen name="Setting" component={Settingcreen} />
@@ -62,6 +62,7 @@ const Navigation = () => {
           <Stack.Screen name="EditCategory" component={EditCategory} />
           <Stack.Screen name="RegisterAmbie" component={RegisterAmbie} />
           <Stack.Screen name="RegisterCatego" component={RegisterCatego} />
+          <Stack.Screen name="Register" component={RegisterScreen} />
 
         </Stack.Navigator>
       </NavigationContainer>

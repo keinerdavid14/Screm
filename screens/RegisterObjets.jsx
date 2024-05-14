@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, ScrollView, TextInput } from 'react-native';
 import { Input } from 'react-native-elements';
 import { useNavigation } from '@react-navigation/native';
 import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
 import DateTimePicker from '@react-native-community/datetimepicker';
-import {Picker, Item} from '@react-native-picker/picker'; // Importa Picker desde '@react-native-picker/picker'
+import { Picker, Item } from '@react-native-picker/picker'; // Importa Picker desde '@react-native-picker/picker'
+
 
 const RegisterObjets = () => {
     const [date, setDate] = useState(new Date());
@@ -36,26 +37,33 @@ const RegisterObjets = () => {
             </View>
             <ScrollView style={styles.scrollContainer} showsVerticalScrollIndicator={false}>
                 <View style={styles.containerForm}>
-                    {['Codigo', 'Descripcion', 'Codigo centro', 'Centro'].map((label) => (
+                    {['Codigo',].map((label) => (
                         <View style={styles.containerInput} key={label}>
                             <Text style={styles.textInputLabel}>{label}:</Text>
                             <Input containerStyle={styles.inputContainer} inputStyle={styles.input} />
                         </View>
                     ))}
                     <View style={styles.select} >
-                        <Text style={styles.textInputLabel} >Codigo Ambiente</Text>
+                        <Text style={styles.textInputLabel} >Codigo Categoria</Text>
                         <Picker style={styles.select1}
                             selectedValue={selectedValue}
                             onValueChange={(itemValue, itemIndex) =>
                                 setSelectedValue(itemValue)
                             }>
-                                
-                            <Picker.Item label="Seleccione el ambiente"/>
+
+                            <Picker.Item label="Seleccione el codigo De Categoria" />
                             <Picker.Item label="1" value="1" />
                             <Picker.Item label="2" value="2" />
                             <Picker.Item label="3" value="3" />
                         </Picker>
                     </View>
+
+                    {['Serial',].map((label) => (
+                        <View style={styles.containerInput} key={label}>
+                            <Text style={styles.textInputLabel}>{label}:</Text>
+                            <Input containerStyle={styles.inputContainer} inputStyle={styles.input} />
+                        </View>
+                    ))}
                     <View style={styles.select} >
                         <Text style={styles.textInputLabel} >Ambiente</Text>
                         <Picker style={styles.select1}
@@ -63,13 +71,44 @@ const RegisterObjets = () => {
                             onValueChange={(itemValue, itemIndex) =>
                                 setSelectedValue(itemValue)
                             }>
-                                
-                            <Picker.Item label="Seleccione el ambiente"/>
+
+                            <Picker.Item label="Seleccione el ambiente" />
                             <Picker.Item label="ADSO" value="1" />
                             <Picker.Item label="CONFECCIONES" value="2" />
                             <Picker.Item label="ARTES GRAFICAS" value="3" />
                         </Picker>
                     </View>
+                    {['Estado',].map((label) => (
+                        <View style={styles.containerInput} key={label}>
+                            <Text style={styles.textInputLabel}>{label}:</Text>
+                            <Input containerStyle={styles.inputContainer} inputStyle={styles.input} />
+                        </View>
+                    ))}
+                    {['Observacion',].map((label) => (
+                        <View style={styles.containerInput} key={label}>
+                            <Text style={styles.textInputLabel}>{label}:</Text>
+                            <Input containerStyle={styles.inputContainer} inputStyle={styles.input} />
+                        </View>
+                    ))}
+                    {['Tipo De Objeto',].map((label) => (
+                        <View style={styles.containerInput} key={label}>
+                            <Text style={styles.textInputLabel}>{label}:</Text>
+                            <Input containerStyle={styles.inputContainer} inputStyle={styles.input} />
+                        </View>
+                    ))}
+                    {['Marca',].map((label) => (
+                        <View style={styles.containerInput} key={label}>
+                            <Text style={styles.textInputLabel}>{label}:</Text>
+                            <Input containerStyle={styles.inputContainer} inputStyle={styles.input} />
+                        </View>
+                    ))}
+                    {['Valor',].map((label) => (
+                        <View style={styles.containerInput} key={label}>
+                            <Text style={styles.textInputLabel}>{label}:</Text>
+                            <Input keyboardType='numeric' containerStyle={styles.inputContainer} inputStyle={styles.input} />
+                        </View>
+                    ))}
+
                     <View style={styles.containerInput}>
                         <Text style={styles.textInputLabel}>Fecha:</Text>
                         <TouchableOpacity onPress={showDatepicker} style={styles.inputDate}>
@@ -127,10 +166,11 @@ const styles = StyleSheet.create({
     containerForm: {
         width: '100%',
         marginLeft: '5%',
+
     },
     containerInput: {
         flexDirection: 'row',
-        marginBottom: 20,
+        marginBottom: 5,
         marginRight: 10,
         alignItems: 'center',
     },
@@ -176,19 +216,16 @@ const styles = StyleSheet.create({
         color: 'white',
         marginHorizontal: 10,
     },
-    select:{
-        gap:80,
+    select: {
+        gap: 80,
         alignItems: 'center',
         flexDirection: 'row',
-        
-    },
-    select1:{
-        
-        width: "50%",
-        
+        marginTop: 10,
 
-        
-        
+
+    },
+    select1: {
+        width: "50%",
     },
 });
 
