@@ -4,13 +4,13 @@ import { Input } from 'react-native-elements';
 import { useNavigation } from '@react-navigation/native';
 import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
 import DateTimePicker from '@react-native-community/datetimepicker';
-import { Picker, Item } from '@react-native-picker/picker'; // Importa Picker desde '@react-native-picker/picker'
-
+import { Picker, Item } from '@react-native-picker/picker';
 
 const RegisterObjets = () => {
     const [date, setDate] = useState(new Date());
     const [show, setShow] = useState(false);
-    const [selectedValue, setSelectedValue] = useState('option1'); // Define el estado para el valor seleccionado
+    const [selectedCategory, setSelectedCategory] = useState(''); // Estado para el selector de Codigo Categoria
+    const [selectedEnvironment, setSelectedEnvironment] = useState(''); // Estado para el selector de Ambiente
     const navigation = useNavigation();
 
     const navigateToHome = () => {
@@ -43,12 +43,12 @@ const RegisterObjets = () => {
                             <Input containerStyle={styles.inputContainer} inputStyle={styles.input} />
                         </View>
                     ))}
-                    <View style={styles.select} >
-                        <Text style={styles.textInputLabel} >Codigo Categoria</Text>
+                    <View style={styles.select}>
+                        <Text style={styles.textInputLabel}>Codigo Categoria</Text>
                         <Picker style={styles.select1}
-                            selectedValue={selectedValue}
+                            selectedValue={selectedCategory}
                             onValueChange={(itemValue, itemIndex) =>
-                                setSelectedValue(itemValue)
+                                setSelectedCategory(itemValue)
                             }>
 
                             <Picker.Item label="Seleccione el codigo De Categoria" />
@@ -64,12 +64,12 @@ const RegisterObjets = () => {
                             <Input containerStyle={styles.inputContainer} inputStyle={styles.input} />
                         </View>
                     ))}
-                    <View style={styles.select} >
-                        <Text style={styles.textInputLabel} >Ambiente</Text>
+                    <View style={styles.select}>
+                        <Text style={styles.textInputLabel}>Ambiente</Text>
                         <Picker style={styles.select1}
-                            selectedValue={selectedValue}
+                            selectedValue={selectedEnvironment}
                             onValueChange={(itemValue, itemIndex) =>
-                                setSelectedValue(itemValue)
+                                setSelectedEnvironment(itemValue)
                             }>
 
                             <Picker.Item label="Seleccione el ambiente" />
@@ -78,34 +78,10 @@ const RegisterObjets = () => {
                             <Picker.Item label="ARTES GRAFICAS" value="3" />
                         </Picker>
                     </View>
-                    {['Estado',].map((label) => (
+                    {['Estado', 'Observacion', 'Tipo De Objeto', 'Marca', 'Valor'].map((label) => (
                         <View style={styles.containerInput} key={label}>
                             <Text style={styles.textInputLabel}>{label}:</Text>
-                            <Input containerStyle={styles.inputContainer} inputStyle={styles.input} />
-                        </View>
-                    ))}
-                    {['Observacion',].map((label) => (
-                        <View style={styles.containerInput} key={label}>
-                            <Text style={styles.textInputLabel}>{label}:</Text>
-                            <Input containerStyle={styles.inputContainer} inputStyle={styles.input} />
-                        </View>
-                    ))}
-                    {['Tipo De Objeto',].map((label) => (
-                        <View style={styles.containerInput} key={label}>
-                            <Text style={styles.textInputLabel}>{label}:</Text>
-                            <Input containerStyle={styles.inputContainer} inputStyle={styles.input} />
-                        </View>
-                    ))}
-                    {['Marca',].map((label) => (
-                        <View style={styles.containerInput} key={label}>
-                            <Text style={styles.textInputLabel}>{label}:</Text>
-                            <Input containerStyle={styles.inputContainer} inputStyle={styles.input} />
-                        </View>
-                    ))}
-                    {['Valor',].map((label) => (
-                        <View style={styles.containerInput} key={label}>
-                            <Text style={styles.textInputLabel}>{label}:</Text>
-                            <Input keyboardType='numeric' containerStyle={styles.inputContainer} inputStyle={styles.input} />
+                            <Input keyboardType={label === 'Valor' ? 'numeric' : 'default'} containerStyle={styles.inputContainer} inputStyle={styles.input} />
                         </View>
                     ))}
 
@@ -221,8 +197,6 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         flexDirection: 'row',
         marginTop: 10,
-
-
     },
     select1: {
         width: "50%",

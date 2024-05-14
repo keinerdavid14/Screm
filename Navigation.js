@@ -35,9 +35,9 @@ const Stack = createStackNavigator();
 
 const Navigation = () => {
   return (
-    <SafeAreaView style={{ flex: 1, paddingTop: StatusBar.currentHeight }}>
+    <SafeAreaView style={{ backgroundColor:'#39A900', flex: 1, paddingTop: StatusBar.currentHeight }}>
       <NavigationContainer>
-        <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="Register">
+        <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="Home">
           <Stack.Screen name="otra" component={OtraPantalla} />
           <Stack.Screen name="Token" component={VerToken} />
           <Stack.Screen name="Setting" component={Settingcreen} />
